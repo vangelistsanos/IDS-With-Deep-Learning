@@ -1,0 +1,9 @@
+flask
+flask-cors
+pandas
+numpy
+torch
+torchvision
+torchaudio
+pytorch-tabnet
+requests

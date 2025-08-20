@@ -1,0 +1,235 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.row {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Top: Network (2/3) + KPIs (1/3) στο μήκος */
+.top-row {
+  grid-template-columns: 2fr 1fr;
+  height: 70vh;
+   overflow: hidden; /* prevent content overflow */
+}
+
+
+/* Stack panels in right column */
+.right-panel-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+/* Optional: limit text panel height */
+.text-panel {
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+  background-color: #eef2f7;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Middle: Recent Alerts (1/3) + Live Feed (2/3) */
+/* .middle-row {
+  grid-template-columns: 1fr 2fr;
+  height: 25%;
+} */
+
+/* Bottom: Για το γράφημα στο κάτω μέρος */
+/* .bottom-row {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 25%; 
+} */
+
+.bottom-row {
+  display: flex;
+  /* gap: 1rem; optional spacing between panels   */
+  height: 25%; 
+}
+
+.bottom-row .panel {
+  /* flex: 1;           Make all panels take equal width */
+  min-width: 0;      /* Prevent overflow issues */
+  box-sizing: border-box;
+}
+
+
+.bottom-row .recent-alerts {
+  flex: 0 0 20%;  /* don't grow or shrink, fixed 30% width */
+  font-size: 0.85rem; /* or 0.8rem or any size you prefer */
+}
+
+.bottom-row .live-feed {
+  flex: 0 0 45%;  /* fixed 40% width */
+}
+
+.bottom-row .full-chart {
+  flex: 0 0 35%;  /* fixed 30% width */
+}
+
+
+/* Network graph */
+.network {
+  height: 100%;
+  min-height: 150px;
+
+}
+
+/* KPI panel */
+.kpi-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30%;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: #f9f9f9;
+}
+
+/* Live feed με scrollable panel */
+.live-feed {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.table-container {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* General panel styling */
+.panel {
+  background: #f9f9f9;
+  /* padding: 1rem; */
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  /* overflow: hidden; */
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th, td {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #eee;
+}
+
+/* Make chart fill available space */
+.full-chart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-chart canvas {
+  flex-grow: 1;
+  display : flex;
+  flex-direction: column;
+  min-height: 0;
+  /* width: 100% !important;
+  height: 100% !important; */
+}
+
+
+
+
+
+
+
+
+
+.kpi-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;        /* Never wrap, always in one row */
+  gap: 1rem;
+  overflow-x: auto;         /* Enables horizontal scroll if needed */
+  padding-top: 0.5rem;
+}
+
+.kpi-tile {
+  flex: 1 1 0;
+  min-width: 0;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.kpi-tile h4 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.kpi-tile p {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Colors */
+.kpi-blue {
+  background: #3b82f6; /* blue */
+}
+
+.kpi-green {
+  background: #10b981; /* green */
+}
+
+.kpi-orange {
+  background: #f59e0b; /* orange */
+}
+
+.kpi-red {
+  background: #ef4444; /* red */
+}
+
+
+
+
+
+
+.top-sources-panel {
+  flex: 1;
+  overflow: hidden;
+}
+
+.top-sources-panel canvas {
+  flex: 1;
+  width: 100% !important;
+  height: 80% !important;
+}

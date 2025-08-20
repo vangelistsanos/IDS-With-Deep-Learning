@@ -41,13 +41,15 @@ https://www.kaggle.com/datasets/mrwellsdavid/unsw-nb15
 4. Για να τρέξουν τα hyperparameter tunings θα πρέπει να αλλαχτούν τα παρακάτω
    απο
    
-   `USE_TUNER = False
-    FRACTION = 1.0 #100%`
+   `USE_TUNER = False`
+
+   `FRACTION = 1.0 #100%`
 
    σε
    
-    `USE_TUNER = True
-    FRACTION = 0.3 #30%`
+    `USE_TUNER = True`
+   
+    `FRACTION = 0.3 #30%`
 
 
 
